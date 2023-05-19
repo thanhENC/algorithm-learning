@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 // declare functions
 bool isPrime(int number);
 
@@ -24,7 +23,7 @@ int main()
         cout << result << endl;
 
         cout << "Continue [Y]es or [N]o: ";
-        cin >> userWannaContinue;        
+        cin >> userWannaContinue;
 
         transform(userWannaContinue.begin(), userWannaContinue.end(), userWannaContinue.begin(), ::toupper);
         stop = userWannaContinue != "Y";
@@ -46,9 +45,13 @@ bool isPrime(int number)
     {
         return false;
     }
+    else if (number == 2)
+    {
+        return true;
+    }
     else
     {
-        for (int i = 2; i <= sqrt(number); i++)
+        for (int i = 3; i <= sqrt(number); i += 2)
         {
             if (number % i == 0)
             {
